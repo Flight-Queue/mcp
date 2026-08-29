@@ -1,0 +1,10 @@
+{
+  "name": "flightqueue",
+  "version": "1.0.0",
+  "description": "Airport security wait times, forecasts, FAA delays, EES border queues and baggage stats.",
+  "mcpServers": {
+    "flightqueue": {
+      "httpUrl": "https://mcp.flightqueue.com/mcp"
+    }
+  }
+}

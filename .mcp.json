@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "flightqueue": {
+      "type": "http",
+      "url": "https://mcp.flightqueue.com/mcp",
+      "note": "Official FlightQueue MCP server. Uses OAuth 2.1: on first connection the agent is prompted to sign in with a FlightQueue account. 19 of the 22 tools work on a free account; wait time forecasts, historical patterns and the live feed need a premium plan."
+    }
+  }
+}

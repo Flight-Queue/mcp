@@ -1,0 +1,17 @@
+{
+  "name": "flightqueue",
+  "version": "1.0.0",
+  "description": "FlightQueue plugin. Airport security wait times and forecasts, FAA delays, EES border queues, and airline baggage performance for 8,000+ airports.",
+  "author": {
+    "name": "FlightQueue",
+    "url": "https://flightqueue.com"
+  },
+  "repository": "https://github.com/Flight-Queue/mcp",
+  "license": "MIT",
+  "keywords": [
+    "flightqueue",
+    "airport-wait-times",
+    "tsa",
+    "travel"
+  ]
+}

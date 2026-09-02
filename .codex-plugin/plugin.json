@@ -1,0 +1,46 @@
+{
+  "name": "flightqueue",
+  "version": "1.0.0",
+  "description": "FlightQueue plugin for Codex and ChatGPT. Airport security wait times and forecasts, FAA delays, EES border queues, lounges, terminals and airline baggage performance for 8,000+ airports.",
+  "author": {
+    "name": "FlightQueue",
+    "url": "https://flightqueue.com"
+  },
+  "homepage": "https://mcp.flightqueue.com",
+  "repository": "https://github.com/Flight-Queue/mcp",
+  "license": "MIT",
+  "keywords": [
+    "flightqueue",
+    "airport-wait-times",
+    "tsa",
+    "travel",
+    "flight-delays",
+    "ees",
+    "border-control",
+    "airport-lounges",
+    "baggage"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "FlightQueue",
+    "shortDescription": "Airport wait times, delays and border queues",
+    "longDescription": "Answer real travel questions with live airport data. Get the security wait at any airport right now, a forecast for a future departure, the best time to arrive for a given flight, current FAA ground stops and delay programs, EU Entry/Exit System border queues, lounge access, terminal layouts, aviation weather and airline baggage performance. Covers 8,000+ airports.",
+    "developerName": "FlightQueue",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://flightqueue.com",
+    "supportURL": "https://flightqueue.com/contact",
+    "privacyPolicyURL": "https://flightqueue.com/privacy",
+    "termsOfServiceURL": "https://flightqueue.com/terms",
+    "defaultPrompt": [
+      "What is the security wait at JFK right now, and when should I arrive for an 8am departure?"
+    ],
+    "composerIcon": "./assets/composer-icon.png",
+    "logo": "./assets/logo.png",
+    "screenshots": [],
+    "brandColor": "#3B82F6"
+  }
+}

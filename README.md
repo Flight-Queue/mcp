@@ -82,6 +82,19 @@ Every tool is annotated. The two that write (`submit_wait_time_report`,
 `create_wait_time_alert`) are marked non-destructive: they add a report or an alert and
 delete nothing.
 
+## Skills
+
+The `skills/` folder has agent skills that tell an assistant which tools to call, in
+which order, for common travel questions. Claude Code and Codex load them with the plugin.
+
+| Skill | Use it for |
+| --- | --- |
+| `flightqueue-trip-day` | When to leave for the airport: best arrival time, queue, delays, weather, terminal, lounge |
+| `flightqueue-ees-schengen` | EES border queues now and in 24h, and the Schengen 90/180-day check |
+| `flightqueue-compare-airports` | Which airport to fly from: waits, delays and weekly patterns side by side |
+| `flightqueue-baggage` | Carry-on and checked-bag rules, and which airlines lose the fewest bags |
+| `flightqueue-crowd-reports` | Read traveller wait reports, and share a wait only with the user's consent |
+
 ## Ask it things like
 
 - "What is the security wait at JFK right now?"
@@ -92,13 +105,15 @@ delete nothing.
 
 ## Repository contents
 
-This repo is manifests only; the server itself is hosted.
+This repo is manifests and skills only; the server itself is hosted.
 
 | File | Purpose |
 | --- | --- |
 | `.mcp.json` | MCP server config |
 | `.grok-plugin/plugin.json` | xAI plugin marketplace |
 | `.claude-plugin/plugin.json` | Claude Code plugin marketplace |
+| `.codex-plugin/plugin.json` | Codex plugin |
+| `skills/<name>/SKILL.md` | Agent skills |
 | `server.json` | Official MCP registry manifest |
 | `gemini-extension.json` | Gemini CLI extensions gallery |
 

@@ -20,6 +20,7 @@
     "airport-lounges",
     "baggage"
   ],
+  "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "FlightQueue",

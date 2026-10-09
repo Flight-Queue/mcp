@@ -24,10 +24,10 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Flight Queue",
-    "shortDescription": "Airport wait times, delays and border queues",
+    "shortDescription": "Airport waits and delays",
     "longDescription": "Answer real travel questions with live airport data. Get the security wait at any airport right now, a forecast for a future departure, the best time to arrive for a given flight, current FAA ground stops and delay programs, EU Entry/Exit System border queues, lounge access, terminal layouts, aviation weather and airline baggage performance. Covers 8,000+ airports.",
     "developerName": "Flight Queue",
-    "category": "Productivity",
+    "category": "Travel",
     "capabilities": [
       "Interactive",
       "Read"

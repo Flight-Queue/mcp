@@ -1,4 +1,4 @@
-# FlightQueue
+# Flight Queue
 
 Airport intelligence for AI assistants. A hosted, remote **MCP server** at
 [`mcp.flightqueue.com`](https://mcp.flightqueue.com) covering security wait times and
@@ -38,7 +38,7 @@ Full per-client instructions: [mcp.flightqueue.com](https://mcp.flightqueue.com)
 ## Sign-in
 
 OAuth 2.1 with PKCE. Your client runs the flow on first use and you sign in with a
-FlightQueue account. There is no anonymous access and no API-key header.
+Flight Queue account. There is no anonymous access and no API-key header.
 
 A free account reaches 19 of the 22 tools. A
 [premium plan](https://flightqueue.com/pricing) unlocks forecasts, history and the live
@@ -68,7 +68,7 @@ Free, with any signed-in account:
 | `get_terminals` | Terminals, their airlines and checkpoints |
 | `submit_wait_time_report` | Report an observed wait; feeds the shared model |
 | `create_wait_time_alert` | Alert when a wait crosses a threshold |
-| `discover_more_flight_tools` | Other FlightQueue MCP servers worth connecting |
+| `discover_more_flight_tools` | Other Flight Queue MCP servers worth connecting |
 
 Premium:
 

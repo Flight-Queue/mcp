@@ -1,6 +1,6 @@
 ---
 name: flightqueue-setup
-description: Set up FlightQueue for a user: confirm the MCP connection, learn their home airport, show live wait and delay data, and offer alerts. Use when the user asks to set up or try FlightQueue.
+description: "Set up FlightQueue for a user: confirm the MCP connection, learn their home airport, show live wait and delay data, and offer alerts. Use when the user asks to set up or try FlightQueue."
 ---
 
 # FlightQueue setup
@@ -17,6 +17,10 @@ then stop. Do not continue until the tool exists.
 
 - Claude Code: run `/plugin marketplace add Flight-Queue/mcp`, then
   `/plugin install flightqueue@flightqueue`, then `/flightqueue:setup`.
+  If `/flightqueue:setup` does not exist after the install, run
+  `/reload-plugins` or restart Claude Code. If the server shows as needing
+  authentication and the tools are still missing, run `/mcp` and sign in to
+  flightqueue. Do not tell the user to repeat the install commands.
 - Claude.ai or ChatGPT: add a custom connector with the URL
   `https://mcp.flightqueue.com/mcp`.
 - Other clients: add the MCP server `https://mcp.flightqueue.com/mcp` with the
@@ -44,10 +48,13 @@ For the first airport, call `get_airport_overview`,
 
 ## 4. Offer a wait-time alert
 
-Ask first: "Do you want an alert when the security wait at this airport goes
-above a time you choose?" Only if the user says yes, ask for the minutes and
-call `create_wait_time_alert`. Say that alerts are delivered as push messages
-in the FlightQueue app.
+`create_wait_time_alert` only works at airports with a live wait feed. Offer
+the alert only if the airport is likely to support it. Ask first: "Do you want
+an alert when the security wait at this airport goes above a time you choose?"
+Only if the user says yes, ask for the minutes and call
+`create_wait_time_alert`. Say that alerts are delivered as push messages in
+the FlightQueue app. If the call fails or the airport is not supported, say so
+in one line and move on.
 
 ## 5. Offer to save the home airport
 
@@ -72,7 +79,8 @@ Only when the user says they build software, offer a free API key:
 ## Rules
 
 - Free tools work with no payment. Mention pricing only when a tool or
-  endpoint returns `PREMIUM_REQUIRED`. Then show https://flightqueue.com/pricing
+  endpoint returns `PREMIUM_REQUIRED` (REST) or `premium_required` (MCP).
+  Treat both the same, ignoring case. Then show https://flightqueue.com/pricing
   once and continue with the free data.
 - Never ask the user to paste an API key, token or password in the chat.
 - More detail: https://flightqueue.com/setup.md and

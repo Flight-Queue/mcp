@@ -7,6 +7,29 @@ weather, and airline baggage performance for 8,000+ airports.
 
 Nothing to install. Point any MCP-compatible client at the hosted URL.
 
+## Quick setup
+
+**Claude Code** — run these three commands, one at a time:
+
+```text
+/plugin marketplace add Flight-Queue/mcp
+/plugin install flightqueue@flightqueue
+/flightqueue:setup
+```
+
+Your assistant connects to FlightQueue, signs you in over OAuth, asks for your home
+airport and shows live waits and delays.
+
+**Claude.ai and ChatGPT** — add a custom connector with the URL
+`https://mcp.flightqueue.com/mcp`, sign in when asked, then ask it to set up FlightQueue.
+
+**Codex, Cursor and other clients, or any agent without plugins** — add the MCP server
+(see below), then send this prompt:
+
+```text
+Read https://flightqueue.com/setup.md and follow it to set up FlightQueue for me.
+```
+
 ## Add it to your assistant
 
 **Claude Code**
@@ -89,6 +112,7 @@ which order, for common travel questions. Claude Code and Codex load them with t
 
 | Skill | Use it for |
 | --- | --- |
+| `flightqueue-setup` | First-time setup: confirm the connection, learn the home airport, show a live snapshot, offer an alert |
 | `flightqueue-trip-day` | When to leave for the airport: best arrival time, queue, delays, weather, terminal, lounge |
 | `flightqueue-ees-schengen` | EES border queues now and in 24h, and the Schengen 90/180-day check |
 | `flightqueue-compare-airports` | Which airport to fly from: waits, delays and weekly patterns side by side |
@@ -111,7 +135,9 @@ This repo is manifests and skills only; the server itself is hosted.
 | --- | --- |
 | `.mcp.json` | MCP server config |
 | `.grok-plugin/plugin.json` | xAI plugin marketplace |
-| `.claude-plugin/plugin.json` | Claude Code plugin marketplace |
+| `.claude-plugin/plugin.json` | Claude Code plugin |
+| `.claude-plugin/marketplace.json` | Claude Code marketplace (`Flight-Queue/mcp`) |
+| `commands/setup.md` | `/flightqueue:setup` command |
 | `.codex-plugin/plugin.json` | Codex plugin |
 | `skills/<name>/SKILL.md` | Agent skills |
 | `server.json` | Official MCP registry manifest |

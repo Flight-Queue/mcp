@@ -1,6 +1,6 @@
 {
   "name": "flightqueue",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Flight Queue plugin for Grok. Airport security wait times and forecasts, FAA delays, EES border queues, and airline baggage performance for 8,000+ airports.",
   "author": {
     "name": "Flight Queue",

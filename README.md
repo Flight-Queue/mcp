@@ -63,7 +63,7 @@ Full per-client instructions: [mcp.flightqueue.com](https://mcp.flightqueue.com)
 OAuth 2.1 with PKCE. Your client runs the flow on first use and you sign in with a
 Flight Queue account. There is no anonymous access and no API-key header.
 
-A free account reaches 19 of the 22 tools. A
+A free account reaches 29 of the 32 tools. A
 [premium plan](https://flightqueue.com/pricing) unlocks forecasts, history and the live
 feed.
 
@@ -89,8 +89,17 @@ Free, with any signed-in account:
 | `get_aviation_weather` | METAR, TAF and flight category |
 | `get_lounges` | Lounges by terminal, with access rules and amenities |
 | `get_terminals` | Terminals, their airlines and checkpoints |
+| `get_gate_walk_times` | Longest walk in each terminal and gate-to-gate walk times |
+| `get_typical_wait_by_hour` | Typical security wait for each hour, busiest and quietest hours |
+| `get_fast_track_offers` | Fast track passes and memberships at an airport, with prices |
+| `check_connection_time` | Is a layover long enough: walk, security, passport and EES waits |
+| `get_flight_wifi` | Wi-Fi system and Starlink odds for a flight number (SeatWifi data) |
+| `get_security_wait_report` | Monthly security wait report per airport from live readings |
 | `submit_wait_time_report` | Report an observed wait; feeds the shared model |
 | `create_wait_time_alert` | Alert when a wait crosses a threshold |
+| `submit_feedback` | Send a bug report, feature request or feedback to the Flight Queue team |
+| `open_flightqueue` | Airport wait times panel for the ChatGPT sidebar |
+| `list_skills`, `get_skill` | Read the Flight Queue agent skills (for clients without MCP Skills) |
 | `discover_more_flight_tools` | Other Flight Queue MCP servers worth connecting |
 
 Premium:
@@ -101,9 +110,9 @@ Premium:
 | `get_historical_wait_times` | 7-day and 90-day hourly history |
 | `get_live_wait_time` | Real-time scrape from 69+ airports |
 
-Every tool is annotated. The two that write (`submit_wait_time_report`,
-`create_wait_time_alert`) are marked non-destructive: they add a report or an alert and
-delete nothing.
+Every tool is annotated. The tools that write (`submit_wait_time_report`,
+`create_wait_time_alert`, `submit_feedback`) are marked non-destructive: they add a
+report, an alert or a message and delete nothing.
 
 ## Skills
 
@@ -126,6 +135,9 @@ which order, for common travel questions. Claude Code and Codex load them with t
 - "Are there any FAA ground stops today?"
 - "How long is the EES border queue at Lisbon?"
 - "Which airline loses the fewest checked bags?"
+- "Will my flight UA1 have Starlink Wi-Fi?"
+- "I land at Heathrow T5 from New York with a 75-minute connection. Is that enough?"
+- "Is the queue at Atlanta busier than usual right now?"
 
 ## Repository contents
 

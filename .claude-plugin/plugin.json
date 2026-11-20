@@ -13,5 +13,7 @@
     "airport-wait-times",
     "tsa",
     "travel"
-  ]
+  ],
+  "privacyPolicyUrl": "https://flightqueue.com/privacy",
+  "icon": "./.claude-plugin/icon.png"
 }

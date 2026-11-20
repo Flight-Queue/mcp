@@ -114,6 +114,27 @@ Every tool is annotated. The tools that write (`submit_wait_time_report`,
 `create_wait_time_alert`, `submit_feedback`) are marked non-destructive: they add a
 report, an alert or a message and delete nothing.
 
+## Events, tasks and forms
+
+Clients on MCP protocol revision `2026-07-28` also get three extensions. Older clients
+see no change.
+
+- **[Events](https://modelcontextprotocol.io/extensions/events/overview)**
+  (`io.modelcontextprotocol/events`): `events/list` and `events/poll`. Poll delivery only.
+
+  | Event | Fires when | Plan |
+  | --- | --- | --- |
+  | `faa.delay_program` | The FAA starts or ends a ground stop or ground delay program. Filter by `airports`, `types`, `changes`. Replays up to 7 days from a cursor. | Free |
+  | `wait_time.threshold_crossed` | An airport's security wait goes above (or below) `threshold_minutes`. | Premium |
+  | `wait_time.spike` | An airport's security wait rises `rise_minutes` (default 15) from its recent low. | Premium |
+
+- **Tasks** (`io.modelcontextprotocol/tasks`): a read-only tool still running after
+  about 4 seconds returns a task handle (`resultType: "task"`). Poll `tasks/get` for the
+  result; `tasks/cancel` stops it. Tasks are kept for 1 hour and only their owner can read them.
+- **Elicitation** (form mode): `submit_wait_time_report` asks the user before it publishes,
+  `create_wait_time_alert` shows the threshold and direction to check or change, and
+  `submit_feedback` lets the user edit the message before it is sent.
+
 ## Skills
 
 The `skills/` folder has agent skills that tell an assistant which tools to call, in

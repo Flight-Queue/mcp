@@ -38,7 +38,32 @@ Read https://flightqueue.com/setup.md and follow it to set up FlightQueue for me
 claude mcp add --transport http flightqueue https://mcp.flightqueue.com/mcp
 ```
 
-**Claude Desktop, Cursor, Windsurf**
+**Cursor** — one click:
+
+[![Add Flight Queue MCP server to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=flightqueue&config=eyJ1cmwiOiJodHRwczovL21jcC5mbGlnaHRxdWV1ZS5jb20vbWNwIn0%3D)
+
+Or add this to `~/.cursor/mcp.json`, then click **Needs login** next to flightqueue in
+Cursor Settings → MCP. Cursor runs the OAuth sign-in itself.
+
+```json
+{
+  "mcpServers": {
+    "flightqueue": {
+      "url": "https://mcp.flightqueue.com/mcp"
+    }
+  }
+}
+```
+
+**Grok Bot** — open **Connect apps**, click **Add a custom connector**, set Type to
+**Remote HTTPS** and Server URL to `https://mcp.flightqueue.com/mcp`. Leave Client ID
+empty. Click **Add plugin**, then **Authorize** and sign in. Use it with `@Flight Queue`.
+
+**Grok (grok.com)** — go to [grok.com/connectors](https://grok.com/connectors), click
+**New Connector** → **Custom** and paste `https://mcp.flightqueue.com/mcp`. On Grok
+Business or Enterprise a team admin adds it first in console.x.ai.
+
+**Claude Desktop, Windsurf**
 
 ```json
 {

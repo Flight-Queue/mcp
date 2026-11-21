@@ -1,4 +1,5 @@
 ---
+name: setup
 description: "Set up FlightQueue: connect, pick your home airport and see live waits and delays"
 ---
 

@@ -118,7 +118,7 @@ Free, with any signed-in account:
 | `get_typical_wait_by_hour` | Typical security wait for each hour, busiest and quietest hours |
 | `get_fast_track_offers` | Fast track passes and memberships at an airport, with prices |
 | `check_connection_time` | Is a layover long enough: walk, security, passport and EES waits |
-| `get_flight_wifi` | Wi-Fi system and Starlink odds for a flight number (SeatWifi data) |
+| `get_flight_wifi` | Wi-Fi system and Starlink odds for a flight number |
 | `get_security_wait_report` | Monthly security wait report per airport from live readings |
 | `submit_wait_time_report` | Report an observed wait; feeds the shared model |
 | `create_wait_time_alert` | Alert when a wait crosses a threshold |
@@ -185,6 +185,20 @@ which order, for common travel questions. Claude Code and Codex load them with t
 - "I land at Heathrow T5 from New York with a 75-minute connection. Is that enough?"
 - "Is the queue at Atlanta busier than usual right now?"
 
+## Testing
+
+Sign in with any free Flight Queue account, then try these prompts. Each one calls the
+tools named beside it.
+
+1. "What is the security wait at JFK right now?" calls `search_airports` and
+   `get_security_wait_estimate`.
+2. "Are there any FAA ground stops today?" calls `get_faa_delays`.
+3. "I have an 8am flight from ORD tomorrow, when should I arrive?" calls
+   `get_best_time_to_fly` and `get_typical_wait_by_hour`.
+4. "Will my flight UA1 have Starlink Wi-Fi?" calls `get_flight_wifi`.
+
+All four work on a free account. No prompt writes data.
+
 ## Repository contents
 
 This repo is manifests and skills only; the server itself is hosted.
@@ -207,6 +221,7 @@ This repo is manifests and skills only; the server itself is hosted.
 - Website: [flightqueue.com](https://flightqueue.com)
 - Pricing: [flightqueue.com/pricing](https://flightqueue.com/pricing)
 - Privacy: [flightqueue.com/privacy](https://flightqueue.com/privacy)
+- Terms: [flightqueue.com/terms](https://flightqueue.com/terms)
 - Support: support@flightqueue.com
 
 ## Licence
